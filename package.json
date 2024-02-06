@@ -1,0 +1,42 @@
+{
+    "name": "crazy-enum",
+    "version": "1.0.5",
+    "description": "",
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js",
+    "unpkg": "./dist/index.umd.js",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "rimraf dist && rollup -c"
+    },
+    "keywords": ["enum"],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.23.6",
+        "@babel/plugin-external-helpers": "^7.23.3",
+        "@babel/plugin-transform-runtime": "^7.23.6",
+        "@babel/preset-env": "^7.23.6",
+        "@babel/preset-typescript": "^7.23.3",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "prettier": "^3.1.1",
+        "rimraf": "^5.0.5",
+        "rollup": "^4.9.1",
+        "rollup-plugin-dts": "^6.1.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-typescript2": "^0.36.0",
+        "tslib": "^2.6.2",
+        "typescript": "^5.3.3"
+    }
+}
