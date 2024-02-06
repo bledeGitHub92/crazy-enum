@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# os
+.DS_Store
