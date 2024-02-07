@@ -1,7 +1,7 @@
 {
     "name": "crazy-enum",
     "version": "1.0.5",
-    "description": "",
+    "description": "A simple and easy-to-use enum library for Javascript, with support for management of enums and their values",
     "type": "module",
     "types": "./dist/index.d.ts",
     "main": "./dist/index.js",
@@ -12,11 +12,12 @@
         "README.md"
     ],
     "scripts": {
-        "build": "rimraf dist && rollup -c"
+        "build": "rimraf dist && rollup -c",
+        "dev": "rollup -c --watch"
     },
     "keywords": ["enum"],
-    "author": "",
-    "license": "ISC",
+    "author": "blue star",
+    "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.23.6",
         "@babel/plugin-external-helpers": "^7.23.3",
@@ -38,5 +39,9 @@
         "rollup-plugin-typescript2": "^0.36.0",
         "tslib": "^2.6.2",
         "typescript": "^5.3.3"
+    },
+    "contributors": ["apple-pie"],
+    "engines": {
+        "node": ">= 16.19.0"
     }
 }

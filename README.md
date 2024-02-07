@@ -1,6 +1,6 @@
 # Crazy-Enum
 
-> A simple and easy-to-use enum library for Javascript, with support for management of enums and their values.
+A simple and easy-to-use enum library for Javascript, with support for management of enums and their values.
 
 ## Installation
 
@@ -22,7 +22,7 @@ When working with enums, it's often necessary to define a mapping between the va
 First, import the library and create an enum:
 
 ```typescript
-import Enum from 'crazy-enum';
+import { EnumFactory } from 'crazy-enum';
 
 const value = {
   ENABLE: 1,
@@ -34,12 +34,12 @@ const description = {
   DISABLE: 'disable',
 };
 
-export class Status extends Enum(value, description) {
+export class Status extends EnumFactory(value, description) {
   /*
    *  you can add any custom methods you want here
    */
   get isEnable() {
-    return this.id === Status.ENABLE.id;
+    return this.value === Status.ENABLE.value;
   }
 }
 ```
@@ -49,8 +49,8 @@ Then, you can use the enum in your code:
 ```typescript
 import { Status } from './path/to/your/enum';
 
-Status.get(someValue).name; // returns 'enable'
-Status.get(someValue).id; // returns 1
+Status.get(someValue).description; // returns 'enable'
+Status.get(someValue).value; // returns 1
 ```
 
 ## Examples
@@ -70,7 +70,7 @@ const App = () => {
   return (
     <Descriptions title="basic" column={2}>
       <Descriptions.Item label={'status'}>
-        {Status.get(status).name || '-'} // <-- this will return 'enable' if the status is 1
+        {Status.get(status).description || '-'} // <-- this will return 'enable' if the status is 1
       </Descriptions.Item>
     </Descriptions>
   );
@@ -87,7 +87,7 @@ const App = () => {
 
   return (
     <Select
-      options={[...Status].map((it) => ({ label: it.name, value: it.id }))}
+      options={[...Status].map((it) => ({ label: it.description, value: it.value }))}
     />
   );
 };
