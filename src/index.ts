@@ -1,1 +1,1 @@
-export { EnumFactory } from "./core";
+export { EnumFactory as default } from "./core";

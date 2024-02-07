@@ -22,7 +22,7 @@ When working with enums, it's often necessary to define a mapping between the va
 First, import the library and create an enum:
 
 ```typescript
-import { EnumFactory } from 'crazy-enum';
+import EnumFactory from 'crazy-enum';
 
 const value = {
   ENABLE: 1,
