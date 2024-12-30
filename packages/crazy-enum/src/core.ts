@@ -2,16 +2,13 @@ import { iterable, enumerable } from "./helper";
 
 interface IEnumCreator<T> {
     readonly value: T;
-    readonly description: string;
+    readonly text: string;
 }
 
-export function EnumFactory<K extends string, V>(
-    values: Record<K, V>,
-    descriptions: Record<K, string>,
-) {
+export function EnumFactory<K extends string, V>(values: Record<K, V>, texts: Record<K, string>) {
     const map = new Map<V, string>();
     for (const it of Object.keys(values) as K[]) {
-        map.set(values[it], descriptions[it]);
+        map.set(values[it], texts[it]);
     }
 
     class EnumCreator implements IEnumCreator<V> {
@@ -21,7 +18,7 @@ export function EnumFactory<K extends string, V>(
             return new this(id);
         }
 
-        get description() {
+        get text() {
             return map.get(this.value) || "";
         }
 
