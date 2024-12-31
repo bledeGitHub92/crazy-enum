@@ -15,7 +15,9 @@
         "build": "rimraf dist && rollup -c",
         "dev": "rollup -c --watch"
     },
-    "keywords": ["enum"],
+    "keywords": [
+        "enum"
+    ],
     "author": "blue star",
     "license": "MIT",
     "devDependencies": {
@@ -24,6 +26,7 @@
         "@babel/plugin-transform-runtime": "^7.23.6",
         "@babel/preset-env": "^7.23.6",
         "@babel/preset-typescript": "^7.23.3",
+        "@babel/runtime": "^7.26.0",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-commonjs": "^25.0.7",
         "@rollup/plugin-node-resolve": "^15.2.3",
@@ -40,7 +43,9 @@
         "tslib": "^2.6.2",
         "typescript": "^5.3.3"
     },
-    "contributors": ["apple-pie"],
+    "contributors": [
+        "apple-pie"
+    ],
     "engines": {
         "node": ">= 16.19.0"
     }

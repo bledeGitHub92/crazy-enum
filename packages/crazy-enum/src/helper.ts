@@ -1,8 +1,5 @@
 export function iterable<K, T extends object = object>(map: Map<K, string>, cls: T): T & Iterable<{ value: K; text: string }> {
-    // 将 Map 转换为 { value, text } 的数组
     const list = [...map].map(([value, text]) => ({ value, text }));
-
-    // 实现 Symbol.iterator
     const iterableObj = {
         [Symbol.iterator](): Iterator<{ value: K; text: string }> {
             let index = 0;
@@ -15,7 +12,7 @@ export function iterable<K, T extends object = object>(map: Map<K, string>, cls:
                         };
                     }
                     return {
-                        value: undefined as any, // 当 done 为 true 时，value 可以是 undefined
+                        value: undefined as any,
                         done: true,
                     };
                 },
@@ -23,7 +20,6 @@ export function iterable<K, T extends object = object>(map: Map<K, string>, cls:
         },
     };
 
-    // 将 iterableObj 合并到 cls 中
     return Object.assign(cls, iterableObj);
 }
 

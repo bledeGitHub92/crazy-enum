@@ -29,12 +29,12 @@ const value = {
   DISABLE: 0,
 };
 
-const description = {
+const texts = {
   ENABLE: 'enable', // this value represents the 'enable' value in the enum
   DISABLE: 'disable',
 };
 
-export class Status extends EnumFactory(value, description) {
+export class Status extends EnumFactory(value, texts) {
   /*
    *  you can add any custom methods you want here
    */
@@ -49,7 +49,7 @@ Then, you can use the enum in your code:
 ```typescript
 import { Status } from './path/to/your/enum';
 
-Status.get(someValue).description; // returns 'enable'
+Status.get(someValue).text; // returns 'enable'
 Status.get(someValue).value; // returns 1
 ```
 
@@ -57,7 +57,7 @@ Status.get(someValue).value; // returns 1
 
 Here are some more examples of how to use the library:
 
-1. using the `get` method to get the enum description by its value:
+1. using the `get` method to get the enum text by its value:
 
 ```typescript
 import * as React from 'react';
@@ -70,7 +70,7 @@ const App = () => {
   return (
     <Descriptions title="basic" column={2}>
       <Descriptions.Item label={'status'}>
-        {Status.get(status).description || '-'} // <-- this will return 'enable' if the status is 1
+        {Status.get(status).text || '-'} // <-- this will return 'enable' if the status is 1
       </Descriptions.Item>
     </Descriptions>
   );
@@ -87,7 +87,7 @@ const App = () => {
 
   return (
     <Select
-      options={[...Status].map((it) => ({ label: it.description, value: it.value }))}
+      options={[...Status].map((it) => ({ label: it.text, value: it.value }))}
     />
   );
 };

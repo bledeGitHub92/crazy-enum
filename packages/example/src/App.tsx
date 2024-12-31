@@ -1,25 +1,21 @@
-import "./App.css";
-import logo from "./logo.svg";
+import { Descriptions, Select } from "antd";
+import Status from "./enums/status";
 
-function App() {
+export default function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <>
+            <Descriptions title="基础" column={2}>
+                <Descriptions.Item label={"status 文本"}>{Status.get(1).text || "-"}</Descriptions.Item>
+                <Descriptions.Item label={"status 值"}>{Status.get(1).value || "-"}</Descriptions.Item>
+            </Descriptions>
+            <Descriptions title="迭代器" column={2}>
+                <Descriptions.Item label={"status"}>
+                    <Select
+                        style={{ width: "100%" }}
+                        options={[...Status].map((it) => ({ label: it.text, value: it.value }))}
+                    />
+                </Descriptions.Item>
+            </Descriptions>
+        </>
     );
 }
-
-export default App;
