@@ -1,6 +1,6 @@
 {
     "name": "crazy-enum",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "A simple and easy-to-use enum library for Javascript, with support for management of enums and their values",
     "type": "module",
     "types": "./dist/index.d.ts",

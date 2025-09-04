@@ -1,6 +1,6 @@
 import { iterable, enumerable } from "./helper";
 
-interface IEnumCreator<T> {
+export interface IEnumCreator<T> {
     readonly value: T;
     readonly text: string;
 }

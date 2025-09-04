@@ -1,1 +1,1 @@
-export { EnumFactory as default } from "./core";
+export { EnumFactory as default, IEnumCreator } from "./core";
